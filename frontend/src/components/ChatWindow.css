@@ -1,0 +1,45 @@
+.message-container-wrapper {
+    overflow-y: auto;
+    padding-right: 20px;
+  }
+   
+  .message-container {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .outgoing-bubble {
+    background-color: #85c1b7;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+    margin: 4px;
+    word-wrap: break-word; 
+    align-self: flex-end;
+  }
+   
+  .incoming-bubble {
+    background-color: #adc9ec;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+    margin: 4px;
+    word-wrap: break-word; 
+    align-self: flex-start;
+  }
+  
+/* Customize the appearance of the scroll bar */
+.message-container-wrapper::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scroll bar */
+  }
+  
+  .message-container-wrapper::-webkit-scrollbar-thumb {
+    background-color: #1d3243; /* Color of the scroll bar thumb */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .message-container-wrapper::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the track behind the thumb */
+    border-radius: 4px;
+  }

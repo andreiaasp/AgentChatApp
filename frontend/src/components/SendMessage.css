@@ -1,0 +1,26 @@
+.input-area {
+    display: flex;
+    align-items: center;
+    background-color: #ebebeb;
+    padding: 6px;
+    margin-top: 15px;
+}
+
+.message-input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    padding: 4px;
+    color: black;
+    font-size: 16px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.send-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+}
+  
