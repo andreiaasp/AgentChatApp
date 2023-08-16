@@ -1,15 +1,15 @@
 .message-container-wrapper {
     overflow-y: auto;
     padding-right: 20px;
-  }
+}
    
-  .message-container {
+.message-container {
     height: 75vh;
     display: flex;
     flex-direction: column;
-  }
+}
   
-  .outgoing-bubble {
+.outgoing-bubble {
     background-color: #85c1b7;
     color: white;
     padding: 6px;
@@ -17,9 +17,12 @@
     margin: 4px;
     word-wrap: break-word; 
     align-self: flex-end;
-  }
+    text-align: right;
+    max-width: fit-content;
+    margin-left: auto;
+}
    
-  .incoming-bubble {
+.incoming-bubble {
     background-color: #adc9ec;
     color: white;
     padding: 6px;
@@ -27,19 +30,48 @@
     margin: 4px;
     word-wrap: break-word; 
     align-self: flex-start;
-  }
-  
-/* Customize the appearance of the scroll bar */
+    text-align: left;
+    max-width: fit-content;
+    margin-right: auto;
+}
+
+.message-info{
+    padding-bottom: 10px;
+}
+
+.timestamp{
+    color: darkgray;
+    font-size: 10px;
+}
+
+.date{
+    text-transform: uppercase;
+    color: slategray;
+    font-size: x-small;
+    text-align: center;
+}
+
+.align-right{
+    text-align:right;
+}
+
+.align-left{
+    text-align:left;
+}
+
+/* Scroll Bar Custom Start*/
 .message-container-wrapper::-webkit-scrollbar {
-    width: 8px; /* Width of the vertical scroll bar */
-  }
+    width: 8px; 
+}
   
-  .message-container-wrapper::-webkit-scrollbar-thumb {
-    background-color: #1d3243; /* Color of the scroll bar thumb */
-    border-radius: 4px; /* Rounded corners */
-  }
+.message-container-wrapper::-webkit-scrollbar-thumb {
+    background-color: #1d3243;
+    border-radius: 4px; 
+}
   
-  .message-container-wrapper::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Color of the track behind the thumb */
+.message-container-wrapper::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
     border-radius: 4px;
-  }
+}
+/* Scroll Bar Custom End */ 
+
