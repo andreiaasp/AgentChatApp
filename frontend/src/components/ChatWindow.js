@@ -48,7 +48,7 @@ function ChatWindow({ messages }) {
                     {messages.map((message, index) => (
                         <div key={index} className={`message-info ${message.isUser ? 'align-right' : 'align-left'}`}>
                             <div style={{ margin: '4px'}}>
-                                {message.isUser ? 'Me' : 'Bot'}
+                                {message.isUser ? 'Me' : 'Visor.ai Assistant'}
                             </div>
                             <div className={message.isUser ? 'outgoing-bubble' : 'incoming-bubble'}>
                                 {message.content}

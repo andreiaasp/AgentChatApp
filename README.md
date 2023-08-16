@@ -23,7 +23,7 @@ git clone https://github.com/andreiaasp/AgentChatApp
 2. Navigate to the project directory:
 
 ```bash
-cd chatbot-app
+cd AgentChatApp
 ```
 3. Install backend dependencies:
 
@@ -34,26 +34,11 @@ npm install
 4. Install frontend dependencies:
 
 ```bash
-cd ../frontend
+cd frontend
 npm install
 ```
 
-# Installation
-
-1. Install frontend dependencies:
-* Create a .env file in the backend directory.
-* Add your MongoDB Atlas connection string:
-
-```bash
-MONGODB_URI=your-mongodb-uri
-```
-
-2. Frontend Configuration:
-* In the frontend/src directory, create a .env file.
-* Add your Dialogflow API key:
-
-```bash
-REACT_APP_DIALOGFLOW_API_KEY=your-dialogflow-api-key
+5. The .env file is already present in the backend in order to use my API keys for the project run.
 ```
 
 # Running the Application
