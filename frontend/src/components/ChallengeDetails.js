@@ -16,7 +16,7 @@ function ChallengeDetails() {
         </div>
         <h5 className="chat-title">Simple Chat App</h5>
     </div>
-    
+
   );
 }
 

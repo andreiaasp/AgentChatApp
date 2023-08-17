@@ -39,7 +39,6 @@ npm install
 ```
 
 5. The .env file is already present in the backend in order to use my API keys for the project run.
-```
 
 # Running the Application
 

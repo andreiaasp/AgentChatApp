@@ -4,14 +4,16 @@ const { google } = require('googleapis');
 const axios = require('axios');
 const Message = require('../models/Message'); 
 
-// Create a new message
+// create a new message
 router.post('/send-message', async (req, res) => {
-    console.log('Request to /send-message received\n');
   try {
+    
     const { content, isUser  } = req.body;
+    // create message instance and save it to MongoDB
     const newMessage = new Message({ content, isUser });
     await newMessage.save();
 
+    // send user message to Dialogflow and get the response
     const dialogflowResponse = await sendMessageToDialogflow(content); 
     
     // Save Dialogflow response to MongoDB
@@ -25,9 +27,10 @@ router.post('/send-message', async (req, res) => {
   }
 });
 
-// Fetch all messages
+// fetch all messages
 router.get('/get-messages', async (req, res) => {
   try {
+    // fetch all messages from MongoDB and sort by timestamp
     const messages = await Message.find().sort('-timestamp');
     res.status(200).json(messages);
   } catch (error) {
@@ -35,12 +38,13 @@ router.get('/get-messages', async (req, res) => {
   }
 });
 
+// function to send a message to Dialogflow
 const sendMessageToDialogflow = async (userMessage) => {
    
     try {
+      // necessary configurations
         const projectId = 'chatbotagent-uele';
         const languageCode = 'en';
-
         const credentials = require('../serviceAccountKey.json'); 
 
         const auth = new google.auth.GoogleAuth({
@@ -48,9 +52,9 @@ const sendMessageToDialogflow = async (userMessage) => {
             scopes: ['https://www.googleapis.com/auth/dialogflow'],
         });
 
+          // authenticate and get access token
         const authClient = await auth.getClient();
         const accessToken = await authClient.getAccessToken();
-
         const dialogflowEndpoint = `https://dialogflow.googleapis.com/v2/projects/${projectId}/agent/sessions/${Date.now()}:detectIntent`;
   
         const requestBody = {
@@ -61,7 +65,7 @@ const sendMessageToDialogflow = async (userMessage) => {
             },
             },
         };
-    
+      // send the request to Dialogflow and return the fulfillment text
         const response = await axios.post(dialogflowEndpoint, requestBody, {
             headers: {
             Authorization: `Bearer ${accessToken.token}`,
