@@ -64,9 +64,4 @@ npm start
 
 ## Troubleshooting
 
-* If you encounter issues with the Dialogflow API, ensure your API key is correctly configured.
-* If MongoDB Atlas connection fails, verify your connection string.
-
-## Troubleshooting
-
 For questions or support, feel free to contact me at andreiaasousap@gmail.com.
